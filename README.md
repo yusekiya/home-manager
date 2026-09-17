@@ -53,7 +53,7 @@ nix run home-manager/master -- switch --flake ~/Develop/home-manager#$(whoami)@$
 
 ここで，`$(whoami)@$(hostname -s)` が `flake.nix` の `homeConfigurations` に事前に追加されている必要がある．
 
-## 2回目以降
+### 2回目以降
 
 ```bash
 home-manager switch --flake ~/Develop/home-manager#"$(whoami)@$(hostname -s)"
