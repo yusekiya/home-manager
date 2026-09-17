@@ -56,6 +56,7 @@
     librsvg
     llvm
     lua
+    lua-language-server
     mise
     neovim
     nkf
@@ -67,6 +68,7 @@
     ripgrep
     rsync
     rtk
+    ruff
     rustup
     sheldon
     ssh-copy-id
@@ -75,6 +77,7 @@
     tdf
     tealdeer
     terminaltexteffects
+    texlab
     tig
     tmux
     tree
