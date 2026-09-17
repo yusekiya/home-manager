@@ -68,6 +68,12 @@
 
   programs.zsh = {
     enable = true;
+    envExtra = ''
+      source ~/dotfiles/.zshenv
+    '';
+    profileExtra = ''
+      source ~/dotfiles/.zprofile
+    '';
     initContent = ''
       source ~/dotfiles/.zshrc
     '';
