@@ -73,7 +73,7 @@
     yazi
     unar
     ffmpegthumbnailer
-    poppler_utils
+    poppler-utils
     bottom
     pueue
     cargo-update
