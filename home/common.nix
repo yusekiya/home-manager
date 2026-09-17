@@ -61,6 +61,15 @@
     # EDITOR = "emacs";
   };
 
+  home.shellAliases.hms = ''home-manager switch --flake ~/Develop/home-manager#"$(whoami)@$(hostname -s)"'';
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.zsh = {
+    enable = true;
+    initContent = ''
+      source ~/dotfiles/.zshrc
+    '';
+  };
 }
