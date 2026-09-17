@@ -25,6 +25,8 @@
     autoconf
     automake
     binutils
+    bottom
+    cargo-update
     cmake
     colordiff
     cookiecutter
@@ -37,54 +39,52 @@
     editorconfig-core-c
     fd
     ffmpeg
+    ffmpegthumbnailer
     findutils
     fzf
     gawk
     gh
     ghostscript
     git
+    git-graph
     gnused
     gnutls
+    harper
     imagemagick
     jq
-    librsvg
     lazygit
+    librsvg
     llvm
     lua
     mise
     neovim
     nkf
     pandoc
+    poppler-utils
+    prettier
     pstoedit
+    pueue
     ripgrep
     rsync
+    rtk
+    rustup
     sheldon
     ssh-copy-id
     starship
     stylua
+    tdf
+    tealdeer
+    terminaltexteffects
     tig
     tmux
     tree
     tree-sitter
+    unar
     uv
     vim
     xz
-    zoxide
     yazi
-    unar
-    ffmpegthumbnailer
-    poppler-utils
-    bottom
-    pueue
-    cargo-update
-    tealdeer
-    git-graph
-    tdf
-    rustup
-    rtk
-    harper
-    prettier
-    terminaltexteffects
+    zoxide
   ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
     colima
     lima
