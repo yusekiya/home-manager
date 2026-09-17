@@ -3,6 +3,11 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
+  home.homeDirectory = lib.mkDefault (
+    if pkgs.stdenv.hostPlatform.isDarwin
+    then "/Users/${config.home.username}"
+    else "/home/${config.home.username}"
+  );
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
