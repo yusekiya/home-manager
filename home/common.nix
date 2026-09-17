@@ -83,6 +83,7 @@
     tree
     tree-sitter
     unar
+    usage
     uv
     vim
     xz
