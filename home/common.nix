@@ -80,7 +80,7 @@
     tealdeer
     git-graph
     tdf
-    rust-analyzer
+    rustup
     rtk
     harper
     prettier
