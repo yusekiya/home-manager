@@ -129,6 +129,26 @@
     # EDITOR = "emacs";
   };
 
+  # Create these directories on activation if they don't already exist.
+  # Home Manager only creates parent directories for files it manages, so
+  # otherwise-empty directories need to be made explicitly.
+  home.activation.createUserDirs =
+    let
+      dirs = [
+        "Study"
+        ".local/bin"
+        ".local/include"
+        ".local/lib"
+        ".local/share"
+        ".local/src"
+      ];
+    in
+    lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+      run mkdir -p $VERBOSE_ARG ${
+        lib.concatMapStringsSep " " (d: ''"${config.home.homeDirectory}/${d}"'') dirs
+      }
+    '';
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 }
