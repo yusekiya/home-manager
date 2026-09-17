@@ -42,7 +42,7 @@
     gh
     ghostscript
     git
-    gnu-sed
+    gnused
     gnutls
     imagemagick
     jq
