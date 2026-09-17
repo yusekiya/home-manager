@@ -21,9 +21,55 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    ripgrep
+    aspell
+    autoconf
+    automake
+    binutils
+    cmake
+    colordiff
+    cookiecutter
+    coreutils
+    ctags
+    direnv
+    docker
+    docker-compose
+    editorconfig-core-c
     fd
+    ffmpeg
+    findutils
+    fzf
+    gawk
+    gh
+    ghostscript
+    git
+    gnu-sed
+    gnutls
+    imagemagick
     jq
+    librsvg
+    lazygit
+    llvm
+    lua
+    neovim
+    nkf
+    pandoc
+    pstoedit
+    ripgrep
+    rsync
+    ssh-copy-id
+    starship
+    stylua
+    tig
+    tmux
+    tree
+    tree-sitter
+    vim
+    xz
+    zoxide
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+    colima
+    lima
+    procps
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
