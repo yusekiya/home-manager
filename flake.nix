@@ -8,10 +8,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    # Nord dircolors theme. Not a flake, so consume it as a plain source tree.
+    nord-dircolors = {
+      url = "github:nordtheme/dircolors";
+      flake = false;
+    };
   };
 
   outputs =
-    { nixpkgs, home-manager, ... }:
+    { nixpkgs, home-manager, ... }@inputs:
     let
       mkHome = { system, username, modules }:
         home-manager.lib.homeManagerConfiguration {
@@ -19,6 +24,7 @@
             inherit system;
             config.allowUnfree = true;
           };
+          extraSpecialArgs = { inherit inputs; };
           modules = [
             ./home/common.nix
             { home.username = username; }

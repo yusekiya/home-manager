@@ -36,10 +36,27 @@
         "type": "github"
       }
     },
+    "nord-dircolors": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1682936047,
+        "narHash": "sha256-sPTo78BTyAMSzmRc2oY1102scXnovdn8vWqkgONwdio=",
+        "owner": "nordtheme",
+        "repo": "dircolors",
+        "rev": "0a4906965e2b7b181d2b8f15395dcae2c43ace38",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nordtheme",
+        "repo": "dircolors",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "nord-dircolors": "nord-dircolors"
       }
     }
   },
