@@ -28,6 +28,7 @@
     cmake
     colordiff
     cookiecutter
+    copier
     coreutils
     ctags
     direnv
@@ -50,12 +51,14 @@
     lazygit
     llvm
     lua
+    mise
     neovim
     nkf
     pandoc
     pstoedit
     ripgrep
     rsync
+    sheldon
     ssh-copy-id
     starship
     stylua
@@ -63,9 +66,25 @@
     tmux
     tree
     tree-sitter
+    uv
     vim
     xz
     zoxide
+    yazi
+    unar
+    ffmpegthumbnailer
+    poppler_utils
+    bottom
+    pueue
+    cargo-update
+    tealdeer
+    git-graph
+    tdf
+    rust-analyzer
+    rtk
+    harper
+    prettier
+    terminaltexteffects
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
     colima
     lima
