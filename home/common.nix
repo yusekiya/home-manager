@@ -85,7 +85,7 @@
     harper
     prettier
     terminaltexteffects
-  ] ++ lib.optionals pkgs.stdenv.isDarwin [
+  ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
     colima
     lima
     procps
