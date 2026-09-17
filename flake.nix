@@ -36,13 +36,13 @@
         "yseki@qubo" = mkHome {
           system = "aarch64-darwin";
           username = "yseki";
-          modules = [ ];
+          modules = [ ./home/darwin.nix ];
         };
 
         "yseki@ising" = mkHome {
           system = "aarch64-darwin";
           username = "yseki";
-          modules = [ ];
+          modules = [ ./home/darwin.nix ];
         };
       };
     };
