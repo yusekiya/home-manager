@@ -59,3 +59,26 @@ nix run home-manager/master -- switch --flake ~/Develop/home-manager#$(whoami)@$
 home-manager switch --flake ~/Develop/home-manager#"$(whoami)@$(hostname -s)"
 ```
 
+## Lockファイル更新
+
+nixpkgs と home-manager の更新
+
+```bash
+nix flake update
+```
+
+nixpkgsのみの場合
+
+```bash
+nix flake update nixpkgs
+```
+
+更新後のテスト
+
+```bash
+git diff flake.lock # 変更点の確認
+nix build .#homeConfigurations."<user>@<hostname>".activationPackage --no-link # ビルド
+```
+
+問題がなければ `flake.lock` をコミットする．その後，変更を適用．
+
