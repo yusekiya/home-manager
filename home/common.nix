@@ -1,12 +1,19 @@
-{ pkgs, lib, config, inputs, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  inputs,
+  ...
+}:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.homeDirectory = lib.mkDefault (
-    if pkgs.stdenv.hostPlatform.isDarwin
-    then "/Users/${config.home.username}"
-    else "/home/${config.home.username}"
+    if pkgs.stdenv.hostPlatform.isDarwin then
+      "/Users/${config.home.username}"
+    else
+      "/home/${config.home.username}"
   );
 
   # This value determines the Home Manager release that your configuration is
@@ -20,84 +27,89 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    aspell
-    autoconf
-    automake
-    binutils
-    bottom
-    cargo-update
-    cmake
-    colordiff
-    cookiecutter
-    copier
-    coreutils
-    ctags
-    direnv
-    docker
-    docker-buildx
-    docker-compose
-    editorconfig-core-c
-    fd
-    ffmpeg
-    ffmpegthumbnailer
-    findutils
-    fzf
-    gawk
-    gh
-    ghostscript
-    git
-    git-graph
-    gnused
-    gnutls
-    harper
-    imagemagick
-    jq
-    lazygit
-    librsvg
-    llvm
-    lua
-    lua-language-server
-    mise
-    neovim
-    nixd
-    nixfmt
-    nkf
-    pandoc
-    poppler-utils
-    prettier
-    pstoedit
-    pueue
-    ripgrep
-    rsync
-    rtk
-    ruff
-    rustup
-    sheldon
-    ssh-copy-id
-    starship
-    stylua
-    tdf
-    tealdeer
-    terminaltexteffects
-    texlab
-    texpresso
-    tig
-    tmux
-    tree
-    tree-sitter
-    unar
-    usage
-    uv
-    vim
-    xz
-    yazi
-    zoxide
-  ] ++ lib.optionals stdenv.hostPlatform.isDarwin [
-    colima
-    lima
-    procps
-  ];
+  home.packages =
+    with pkgs;
+    [
+      aspell
+      autoconf
+      automake
+      binutils
+      bottom
+      cargo-update
+      cmake
+      colordiff
+      cookiecutter
+      copier
+      coreutils
+      ctags
+      direnv
+      docker
+      docker-buildx
+      docker-compose
+      editorconfig-core-c
+      fd
+      ffmpeg
+      ffmpegthumbnailer
+      findutils
+      fzf
+      gawk
+      gh
+      ghostscript
+      git
+      git-graph
+      gnused
+      gnutls
+      harper
+      imagemagick
+      jq
+      lazygit
+      librsvg
+      llvm
+      lua
+      lua-language-server
+      mise
+      neovim
+      nixd
+      nixfmt
+      nkf
+      pandoc
+      poppler-utils
+      prettier
+      pstoedit
+      pueue
+      ripgrep
+      rsync
+      rtk
+      ruff
+      rustup
+      sheldon
+      ssh-copy-id
+      starship
+      stylua
+      tdf
+      tealdeer
+      terminaltexteffects
+      texlab
+      texpresso
+      tig
+      tmux
+      tree
+      tree-sitter
+      ty
+      unar
+      usage
+      uv
+      vim
+      xz
+      yazi
+      zoxide
+    ]
+    ++ lib.optionals stdenv.hostPlatform.isDarwin [
+      colima
+      iproute2mac
+      lima
+      procps
+    ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
