@@ -60,6 +60,7 @@
     lua-language-server
     mise
     neovim
+    nixfmt
     nkf
     pandoc
     poppler-utils
