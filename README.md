@@ -13,12 +13,6 @@ curl -fsSL -o /tmp/determinate-nix.pkg \
 sudo installer -pkg /tmp/determinate-nix.pkg -target /
 ```
 
-Flake方式でstandaloneのhome-managerをインストール．
-
-```bash
-nix run home-manager/release-<version> -- init --switch ~/.config/home-manager
-```
-
 ### Linux
 
 [公式ページ](https://nixos.org/download/#nix-install-linux)に従ってインストール．

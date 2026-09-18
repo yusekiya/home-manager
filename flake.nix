@@ -33,6 +33,12 @@
     in
     {
       homeConfigurations = {
+        "yseki@yseki-home-mac" = mkHome {
+          system = "aarch64-darwin";
+          username = "yseki";
+          modules = [ ./home/darwin.nix ];
+        };
+
         "yseki@qubo" = mkHome {
           system = "aarch64-darwin";
           username = "yseki";
