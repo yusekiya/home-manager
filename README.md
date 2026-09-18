@@ -33,7 +33,6 @@ Flakeを有効化．
 echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 ```
 
-
 ## 適用
 
 リポジトリをcloneする．
@@ -46,12 +45,16 @@ git clone https://github.com/yusekiya/home-manager.git ~/Develop/home-manager
 
 `home-manager` コマンドがないので，`nix run` から実行する．
 
-
 ```bash
 nix run home-manager/master -- switch --flake ~/Develop/home-manager#$(whoami)@$(hostname -s)
 ```
 
-ここで，`$(whoami)@$(hostname -s)` が `flake.nix` の `homeConfigurations` に事前に追加されている必要がある．
+ここで，セットアップ対象の項目を `flake.nix` の `homeConfigurations` に（もしなければ）事前に追加しておく．
+項目の識別子は次のコマンドの出力と一致させる必要がある．
+
+```bash
+echo "$(whoami)@$(hostname -s)"
+```
 
 ### 2回目以降
 
@@ -81,4 +84,3 @@ nix build .#homeConfigurations."<user>@<hostname>".activationPackage --no-link #
 ```
 
 問題がなければ `flake.lock` をコミットする．その後，変更を適用．
-
