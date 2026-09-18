@@ -35,6 +35,7 @@
     ctags
     direnv
     docker
+    docker-buildx
     docker-compose
     editorconfig-core-c
     fd
@@ -78,6 +79,7 @@
     tealdeer
     terminaltexteffects
     texlab
+    texpresso
     tig
     tmux
     tree
