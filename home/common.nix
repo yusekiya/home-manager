@@ -60,6 +60,7 @@
     lua-language-server
     mise
     neovim
+    nixd
     nixfmt
     nkf
     pandoc
