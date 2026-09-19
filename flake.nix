@@ -50,6 +50,12 @@
           username = "yseki";
           modules = [ ./home/darwin.nix ];
         };
+
+        "yseki@bastion" = mkHome {
+          system = "x86_64-linux";
+          username = "yseki";
+          modules = [ ./home/linux.nix ];
+        };
       };
     };
 }
