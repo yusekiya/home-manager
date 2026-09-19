@@ -33,7 +33,6 @@
       aspell
       autoconf
       automake
-      binutils
       bottom
       cargo-update
       cmake
