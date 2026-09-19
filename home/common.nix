@@ -104,14 +104,14 @@
       yazi
       zoxide
     ]
-    ++ lib.optionals stdenv.isDarwin [
+    ++ lib.optionals stdenv.hostPlatform.isDarwin [
       clang
       colima
       iproute2mac
       lima
       procps
     ]
-    ++ lib.optionals stdenv.isLinux [
+    ++ lib.optionals stdenv.hostPlatform.isLinux [
       gcc
     ];
 
