@@ -52,7 +52,6 @@
       findutils
       fzf
       gawk
-      gcc
       gh
       ghostscript
       git
@@ -106,10 +105,14 @@
       zoxide
     ]
     ++ lib.optionals stdenv.hostPlatform.isDarwin [
+      clang
       colima
       iproute2mac
       lima
       procps
+    ]
+    ++ lib.optionals stdev.hostPlatform.isLinux [
+      gcc
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
