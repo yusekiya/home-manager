@@ -18,7 +18,12 @@
   outputs =
     { nixpkgs, home-manager, ... }@inputs:
     let
-      mkHome = { system, username, modules }:
+      mkHome =
+        {
+          system,
+          username,
+          modules,
+        }:
         home-manager.lib.homeManagerConfiguration {
           pkgs = import nixpkgs {
             inherit system;
@@ -28,7 +33,8 @@
           modules = [
             ./home/common.nix
             { home.username = username; }
-          ] ++ modules;
+          ]
+          ++ modules;
         };
     in
     {
