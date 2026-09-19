@@ -67,6 +67,7 @@
       llvm
       lua
       lua-language-server
+      gnumake
       mise
       neovim
       nixd
