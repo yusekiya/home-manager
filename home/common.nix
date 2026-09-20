@@ -109,7 +109,7 @@
       colima
       iproute2mac
       lima
-      procps
+      watch
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       gcc
