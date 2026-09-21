@@ -8,11 +8,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # Nord dircolors theme. Not a flake, so consume it as a plain source tree.
-    nord-dircolors = {
-      url = "github:nordtheme/dircolors";
-      flake = false;
-    };
   };
 
   outputs =

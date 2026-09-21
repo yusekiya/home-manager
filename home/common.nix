@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 
@@ -118,8 +117,7 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    # Nord dircolors theme, pinned via the 'nord-dircolors' flake input.
-    ".dircolors".source = "${inputs.nord-dircolors}/src/dir_colors";
+    ".dircolors".source = dotfiles/dir_colors;
 
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
