@@ -70,11 +70,16 @@ nixpkgsのみの場合
 nix flake update nixpkgs
 ```
 
-更新後のテスト
+更新環境のビルド
 
 ```bash
-git diff flake.lock # 変更点の確認
-nix build .#homeConfigurations."<user>@<hostname>".activationPackage --no-link # ビルド
+nix build .#homeConfigurations."<user>@<hostname>".activationPackage -o result
+```
+
+新旧パッケージバージョンの比較
+
+```bash
+nix run nixpkgs#nvd -- diff ~/.local/state/nix/profiles/home-manager ./result
 ```
 
 問題がなければ `flake.lock` をコミットする．その後，変更を適用．
