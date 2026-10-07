@@ -32,6 +32,7 @@
       aspell
       autoconf
       automake
+      bat
       bottom
       cargo-update
       cmake
