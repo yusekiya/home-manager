@@ -72,7 +72,7 @@
       nixd
       nixfmt
       nkf
-      nordjs
+      nodejs
       pandoc
       poppler-utils
       prettier
