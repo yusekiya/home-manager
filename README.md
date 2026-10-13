@@ -83,3 +83,19 @@ nix run nixpkgs#nvd -- diff ~/.local/state/nix/profiles/home-manager ./result
 ```
 
 問題がなければ `flake.lock` をコミットする．その後，変更を適用．
+
+## ロールバック
+
+適用後に問題があれば，1つ前の世代を再アクティベートする．
+
+```bash
+"$(home-manager generations | sed -n 2p | awk '{print $NF}')/activate"
+```
+
+世代の一覧は `home-manager generations` で確認できる（先頭が現在の世代）．
+
+適用前（ビルド時など）にエラーが出た場合は世代が作られないため，`flake.lock` などの変更を戻すだけでよい．
+
+```bash
+git restore flake.lock
+```
