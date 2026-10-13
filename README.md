@@ -73,7 +73,7 @@ nix flake update nixpkgs
 更新環境のビルド
 
 ```bash
-nix build .#homeConfigurations."<user>@<hostname>".activationPackage -o result
+nix build .#homeConfigurations."$(whoami)@$(hostname -s)".activationPackage -o result
 ```
 
 新旧パッケージバージョンの比較
