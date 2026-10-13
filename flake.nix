@@ -23,6 +23,22 @@
           pkgs = import nixpkgs {
             inherit system;
             config.allowUnfree = true;
+            # TEMPORARY: work around pstoedit 4.3 failing to build on darwin.
+            # Remove this whole overlays list once fixed upstream
+            # (the --replace-fail below will start failing at that point).
+            overlays = [
+              (final: prev: {
+                pstoedit = prev.pstoedit.overrideAttrs (
+                  old:
+                  prev.lib.optionalAttrs prev.stdenv.hostPlatform.isDarwin {
+                    postPatch = (old.postPatch or "") + ''
+                      substituteInPlace src/drvsvg.cpp \
+                        --replace-fail 'defined (NetBSD) )' 'defined (NetBSD) || defined(__APPLE__) )'
+                    '';
+                  }
+                );
+              })
+            ];
           };
           extraSpecialArgs = { inherit inputs; };
           modules = [
