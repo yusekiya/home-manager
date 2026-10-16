@@ -101,6 +101,7 @@
       usage
       uv
       vim
+      websocat
       xz
       yazi
       zoxide
