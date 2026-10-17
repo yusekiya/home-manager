@@ -114,7 +114,9 @@
       watch
     ]
     ++ lib.optionals stdenv.hostPlatform.isLinux [
+      bubblewrap
       gcc
+      socat
     ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
