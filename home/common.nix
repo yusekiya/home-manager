@@ -96,6 +96,7 @@
       tmux
       tree
       tree-sitter
+      tuios
       ty
       unar
       usage
