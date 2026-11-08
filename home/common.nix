@@ -63,7 +63,6 @@
       jq
       lazygit
       librsvg
-      llvm
       lua
       lua-language-server
       gnumake
@@ -108,7 +107,6 @@
       zoxide
     ]
     ++ lib.optionals stdenv.hostPlatform.isDarwin [
-      clang
       colima
       iproute2mac
       lima
@@ -117,6 +115,7 @@
     ++ lib.optionals stdenv.hostPlatform.isLinux [
       bubblewrap
       gcc
+      llvm
       socat
     ];
 
